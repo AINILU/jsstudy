@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            循环语句:
+                通过循环语句可以反复执行一段代码很多次
+
+            while循环
+                语法：
+                    while(条件表达式){
+                        语句...
+                    }
+                while语句在执行时
+                    先对条件表达式进行求值判断
+                        如果值为true，则执行循环体
+                            循环体执行完后，继续进行判断
+                            如果为true，则继续执行，以此类推
+                        如果值为false，则终止循环
+
+            do...while循环
+                语法：
+                    do{
+                        语句。。。
+                    }
+                    while(条件表达式){
+                        语句。。。
+                    }
+                执行流程：
+                    语句执行时，会先执行循环体
+                        执行完毕后，在进行判断，然后继续或终止
+                
+                    实际上类似，不同的是一个先判断后执行，一个先执行后判断
+                    do...while可以保证循环体至少执行一次
+        */
+       var a = 1;
+
+       //像这种将条件表达式写死为true的循环，叫做死循环
+       //该循环不会停止，除非浏览器关闭，死循环在开发中慎用
+       //可以使用break，来终止循环
+       while (true) {
+           alert(a++);
+           if (n ==10) {
+               break;
+           }
+       }
+       //创建一个循环，往往需要三个步骤
+       //1，创建初始化一个变量
+       var n = 0;
+       //2,在循环中设置一个条件表达式
+       while (n<10) {
+           alert(i);
+           //3,定义一个更新表达式，每次更新初始化变量
+           i++;
+
+           
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
