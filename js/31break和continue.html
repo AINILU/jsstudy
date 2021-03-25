@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            break可以用于退出switch或循环语句
+                不能在if中使用
+                会立即终止离他最近的循环
+        */
+        outer:
+        for(var i =0;i<5;i++){
+            console.log('@'+i+'层开始');
+            for(var j = 0;j<5;j++){
+                // break;
+                // break outer;
+                console.log(j);
+            }
+            console.log('@'+i+'层结束');
+        }
+
+        /*
+            continue可以用来跳过当次循环
+                只会跳过离他最近的循环
+        */
+        outer:
+        for(var i =0;i<5;i++){
+            console.log('@'+i+'层开始');
+            for(var j = 0;j<5;j++){
+                if (j==1) {
+                    continue outer;
+                }
+                console.log(j);
+
+            }
+            console.log('@'+i+'层结束');
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
