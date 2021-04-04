@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function fun(a,b) {
+            console.log(a,b);
+            console.log(this);
+        }
+        fun();
+
+        var obj={
+            name:'sun',
+            sayName:fun,
+        };
+        console.log(obj.sayName==fun);
+        obj.sayName();
+
+
+        var name='全局';
+        function fun2() {
+            console.log(this.name);
+        }
+        var obj1={
+            name:'sun',
+            sayName:fun2,
+        };
+        var obj2={
+            name:'zhu',
+            sayName:fun2,
+        };
+        obj1.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
