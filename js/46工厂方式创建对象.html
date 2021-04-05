@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj={
+            name:'sun',
+            age:18,
+            gender:'nan',
+            sayName:function () {
+                alert(this.name);
+            }
+        };
+        obj.sayName();
+
+
+        function createPerson(name,age,gender) {
+            var obj=new Object();
+            obj.name=name,
+            obj.age=age,
+            obj.gender=gender,
+            obj.sayName=function () {
+                alert(this.name);
+            }
+            return obj;
+        }
+        var obj2=createPerson('sun',18,'nan');
+        var obj3=createPerson('zhu',15,'nan');
+        console.log(obj2);
+        obj3.sayName();
+
+
+        function createDog(name,age) {
+            var obj=new Object();
+            obj.name=name;
+            obj.age=age;
+            obj.sayHello=function(){
+                alert('hello');
+            };
+            return obj;
+        }
+        var dog=createDog('聪聪',2);
+        dog.sayHello();
+        console.log(dog);
+        console.log(obj3);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
