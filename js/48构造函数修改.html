@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name,age,gender) {
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+            // this.sayName=fun;
+        }
+        //将sayName方法在全局作用域中定义
+        // function fun() {
+        //         alert('hello,大家好，我是'+this.name);
+        // }
+        //向原型中添加sayName方法
+        Person.prototype.sayName=function(){
+            alert('大家好我是'+this.name);
+        };
+
+        var per=new Person('sun',18,'男');
+        per.sayName();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            原型prototype
+            解析器向函数中自动添加prototype
+            这个属性对应一个对象，叫原型对象
+            如果函数作为普通函数调用，prototype没有作用
+            当函数以构造函数形式调用时,它所创建的对象中都会有一个隐含的属性
+                指向该构造函数的原型对象，通过__proto__来访问该属性
+
+            原型对象相当于公共的区域，所有同类实例都能访问原型对象
+                我们可以将对象中共有的内容，统一设置到原型对象中
+            
+            当我们访问对象的一个属性或方法时，他会先在对象自身中寻找，如果有则直接使用
+                如果没有则会去原型对象中寻找，找到则直接使用
+            以后创建构造函数时，可以将这些对象共有的属性和方法，统一添加到构造函数的原型对象中
+                这样不用分别为每个对象添加方法，也不会影响全局作用域
+        */
+        function Person() {
+            
+        }
+        function MyClass() {
+            
+        }
+        //向原型对象中添加属性a=123
+        MyClass.prototype.a='我是原型对象中的a';
+        MyClass.prototype.sayHello =function () {
+            alert('hello');  
+        };
+        console.log(Person.prototype ==MyClass.prototype);
+        var mc = new MyClass();
+        var mc2 = new MyClass();
+        console.log(mc.__proto__ == MyClass.prototype);
+        mc.a='我是mc中的a';
+        console.log(mc.a);
+        console.log(mc2.a);
+        console.log(mc.sayHello);
+        //使用hasOwnProperty()来检查对象自身中是否含有该属性
+        console.log('a' in mc2);
+        console.log(mc2.hasOwnProperty('a')); 
+        //原型对象也是对象，所以也有原型
+        //当我们使用一个属性或方法时，会先在自身中寻找
+        //自身中如果有，直接用，如果没有，去原型对象寻找
+        //如果还没有，则取原型的原型中寻找,直到找到Object对象的原型
+        //Object对象的原型 没有原型,如果在obj中依然没有找到，则返回undefined
+        console.log(mc2.__proto__.__proto__.hasOwnProperty('hasOwnProperty'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
